@@ -1,0 +1,8 @@
+$log = Get-WinEvent -LogName Security
+foreach ($entry in $log) {
+    Write-Host "Event ID: " $entry.Id
+    Write-Host "Time: " $entry.TimeCreated
+    Write-Host "Source: " $entry.ProviderName
+    Write-Host "Message: " $entry.Message
+    Write-Host "-------------------"
+}
